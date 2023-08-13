@@ -1,9 +1,9 @@
-const questionContainer = document.querySelector('#quiz-container');
 const message = document.querySelector('#message');
 const question = document.querySelector('#question');
+const alertText = document.querySelector('#alert-text');
 const answerButtons = document.querySelector('#answer-buttons');
 const functionButton = document.querySelector('#function-button');
-const alertText = document.querySelector('#alert-text');
+const questionContainer = document.querySelector('#quiz-container');
 
 let questionIndex = 0
 let corrects = 0
@@ -20,7 +20,8 @@ function startQuiz() {
 
     const input = document.createElement('input')
     const button = document.createElement('button')
-    button.classList.add('btn', 'btn-position')
+    input.classList.add('start-input')
+    button.classList.add('start-button')
 
     button.innerText = "Comenzar"
     message.innerText = "Ingresa tu nombre de usuario"
@@ -89,19 +90,18 @@ function showEnd() {
 
     message.innerHTML = 
     `<div>
-        <h1>
-            Felicidades ${participante}!
-        </h1>
-        <h2> 
+        <h1 class="format"> 
             Tu puntuación: ${corrects} / ${questions.length} 
-        </h2>
+        </h1>
+        <p class="rank"> Ranking </p>
         <table class="ranking-table"> 
-            <tr><th> Nombre </th><th> Aciertos </th></tr>
-            ${ranking.map(part => `<tr><td> ${part.nombre} </td><td> ${part.aciertos} </td></tr>`)}
+            <tr class="table-header"><th class="entry"> Nombre </th><th class="entry"> Aciertos </th> <th class="entry"> Top </th></tr>
+            ${ranking.map((part, i) => `<tr><td class="entry"> ${part.nombre} </td><td class="entry"> ${part.aciertos} </td> <td> ${i + 1} </td></tr>`)}
         </table>
-    </div>
-    `
+    </div>`
 }
+
+
 
 
 // Questions --> Información que viene desde el backend para pintar las preguntas
