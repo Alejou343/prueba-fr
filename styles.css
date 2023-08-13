@@ -14,6 +14,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
+    width: 300px;
 }
 
 .question-container {
@@ -38,4 +39,24 @@ body {
 
 .result-style {
     color: green;
+}
+
+.btn-position {
+    margin-top: 20px;
+}
+
+.table-col {
+    width: 40px;
+    margin: 0;
+    border: 1px solid gray;    
+}
+
+.ranking-table {
+    display: flex;
+    justify-content: center;
+}
+
+.alert {
+    color: red;
+    font-size: x-small;
 }
