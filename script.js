@@ -10,9 +10,6 @@ let corrects = 0
 let participante = ''
 const ranking = []
 
-
-// Función para login y comenzar la actividad
-
 function startQuiz() {
     questionIndex = 0
     corrects = 0
@@ -35,9 +32,6 @@ function startQuiz() {
     })
 }
 
-
-// Función para mostrar la pregunta y sus opciones de respuesta
-
 function showQuestion() {
     if (participante) {
         message.innerText = ''
@@ -58,9 +52,6 @@ function showQuestion() {
     }
 }
 
-
-// Función para seleccionar respuesta (Guarda el resultaado y muestra la siguiente pregunta)
-
 function selectAnswer(answ) {
     if (answ) {
         corrects ++
@@ -73,8 +64,6 @@ function selectAnswer(answ) {
         showEnd()
     }
 }
-
-// Función para mostrar los resultados del quiz
 
 function showEnd() {
     question.innerText = ""
@@ -100,11 +89,6 @@ function showEnd() {
         </table>
     </div>`
 }
-
-
-
-
-// Questions --> Información que viene desde el backend para pintar las preguntas
 
 const questions = 
     [
