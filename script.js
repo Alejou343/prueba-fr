@@ -9,8 +9,8 @@ let questionIndex = 0
 let corrects = 0
 let participante = ''
 const ranking = []
-const preguntas = ['hello', 'generalCulture']
-const API = `https://backend-futuros-residentes.vercel.app/api/${preguntas[Math.floor(Math.random() * 2)]}`
+const preguntas = ['hello', 'generalCulture', 'mathQuestions']
+const API = `https://backend-futuros-residentes.vercel.app/api/${preguntas[Math.floor(Math.random() * 3)]}`
 
 async function fetchQuestions(url) {
     try {
